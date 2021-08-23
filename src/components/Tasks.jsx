@@ -16,7 +16,9 @@ const AddTasks = ({ onCancel, onAddTask }) => {
             <input value={task} onChange={(event) => setTask(event.target.value)}/>
             <div className="add-task-actions-container">
                 <div className="btns-container">
-                    <button className="add-btn"
+                    <button
+                        disabled={!task}
+                        className="add-btn"
                         onClick={() => {
                             onAddTask(task,date);
                             onCancel();
